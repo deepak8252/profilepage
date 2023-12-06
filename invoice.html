@@ -1,0 +1,71 @@
+<html>
+<head>
+<title>invoive bill</title>
+<style>
+th{
+color:white;
+text-transform:uppercase;
+background-color:red;
+font-weight:bold;
+}
+td{
+background-color:orange;
+text-transform:uppercase;
+color:white;
+font-weight:bold;
+}
+</style>
+</head>
+<body>
+<table border=1 width=70% cellspacing=0 cellpadding=20px align="center">
+<tr>
+<th>invoive no</th>
+<th>brand name</th>
+<th>product name</th>
+<th>qty</th>
+<th>rate</th>
+<th>total</th>
+<th>discount</th>
+<th>discount value</th>
+<th>groos value</th>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table>
+</body>
+
+<script>
+var invoice=prompt("enter invoice bill");
+var brand=prompt("enter brand-name");
+var cateogry=prompt("enter cateogry-name");
+var qty=prompt("enter quantity");
+var rate=prompt("enter Rate");
+var disc=prompt("enter discount");
+
+var total=qty*rate;
+var discount=total*disc/100;
+var gross=total-discount;
+
+ var store=document.getElementsByTagName("td");
+ store[0].innerHTML=invoice;
+ store[1].innerHTML=brand;
+ store[2].innerHTML=cateogry;
+ store[3].innerHTML=qty;
+ store[4].innerHTML=rate;
+ store[5].innerHTML=total;
+ store[6].innerHTML=disc;
+ store[7].innerHTML=discount;
+ store[8].innerHTML=gross;
+ 
+ confirm("are you sure");
+</script>
+</html>

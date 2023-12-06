@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>add friend</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <div class="profileinfo">
+        <img src="https://i0.wp.com/images.indianexpress.com/2023/06/Virat-Kohli-7.jpg?strip=all" alt="profile" >
+       
+            <h2>virat kholi</h2>
+            <h4>@Virat-Kohli-7</h4>
+            <h4>followers : 1223</h4>
+            <h4>following : 290</h4>
+            <p><strong>bio</strong> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Possimus, ut eaque. </p>
+            <h2>follow us on </h2>
+            <div class="social-icon">
+               
+               <div class="icon">
+                <i class="fa-brands fa-facebook fs-3 text-light"></i>
+               </div>
+               <div class="icon">
+                <i class="fa-solid fa-envelope fs-3 text-light"></i>
+               </div>
+               <div class="icon">
+                <i class="fa-brands fa-instagram fs-3 text-light"></i>
+               </div>
+               <div class="icon">
+                <i class="fa-brands fa-linkedin fs-3 text-light"></i>
+               </div>
+            </div>
+         <h2 id="friend"></h2>  
+        <button id="profile" onclick="show()" >add friend</button>
+        
+    </div>
+    
+
+    <script>
+       function show(){
+   var fr=  document.getElementById("profile");
+    let addfr=document.getElementById("friend");
+       if(fr.innerText=="add friend" ){
+        fr.innerText=" unfriend";
+        fr.style.background='blue';
+        alert("your are  succesfully add friend list ");
+        addfr.innerHTML="you are a now friend"
+
+       }
+       else {
+        fr.innerHTML="add friend";
+        addfr.innerHTML="";
+       }
+       }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>
+</body>
+</html>

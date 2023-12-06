@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .dark-mode{
+            background-color: black;
+            color:white;
+        }
+    </style>
+</head>
+<body id="body">
+    <input type="text" id="userpin" placeholder="enter your user pin">
+    <button onclick="userpin()">enter the pin</button>
+    <input type="text" id="text" placeholder="enter your whidta balance">
+    <button onclick="balance_whidra(1)">whidra money</button>
+    <button onclick="balance_whidra(2)">check money</button>
+    <button onclick="dark()">dark mode</button>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam similique error magnam aperiam repellendus vel accusantium ipsa nulla quam iure ratione pariatur eos nobis sint quasi, perferendis assumenda repudiandae modi?</p>
+
+
+    <script>
+    // we check atm whidra balance
+   function userpin(){
+    const userpin=123;
+    var accountlogin=document.getElementById("userpin").value;
+    if(userpin==accountlogin){
+document.write("hello")
+    }
+    else {
+        document.write("sorry user your pin will be invailed");
+    }
+   }
+    function balance_whidra(n){
+        const userpin=document.getElementById("userpin").value;
+        const totalbalance=98888;
+       if(n==1){
+        let requestmoney=document.getElementById("text").value;
+        // whidra=totalbalance-requestmoney;
+        if(requestmoney<=totalbalance && requestmoney !=''){
+            document.write("your money will be whidra"+requestmoney)
+        }
+        else{
+            document.write("sorry user")
+        }
+       }
+       else if(n==2){
+        document.write("your balnace will "+totalbalance)
+       }
+
+    }
+         function dark(){
+            var element = document.body;
+   element.classList.toggle("dark-mode");
+         }
+        // let number=prompt("enter your name");
+        // let dividen=prompt("enter your divide number");
+        // if(number% dividen===0){
+        //     document.write(`${number} is multiple by 5`);
+        // }
+        // else{
+        //     document.write(`${number} is not multiple by ${dividen}`);
+        // }
+
+        let marks=prompt("enter your number");
+        // document.write(marks)
+        if(marks>=80 && marks<=100){
+            document.write("first")
+        }
+         else if(marks>=60 && marks<80){
+            document.write("2nd division")
+        }
+        else{
+            document.write("fail")
+        }
+    </script>
+</body>
+</html>

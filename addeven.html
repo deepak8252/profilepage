@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+        }
+        #more{
+            background-color: red;
+            color: white;
+            font-size: 20px;
+            width: 100px;
+            text-align: center;
+            /* margin: auto; */
+            cursor: pointer;
+        }
+        .list{
+            background-color: black;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            /* flex-direction: column; */
+
+        }
+        ul{
+            list-style: none;
+            /* background-color: black; */
+        }
+        ul li{
+            display: inline-flex;
+        }
+        ul li a{
+            text-decoration: none;
+            padding: 10px 20px;
+            font-size: 33px;
+            font-weight: 600;
+            color: white;
+        
+        }
+        .hum_btn{
+            display: none;
+        }
+        @media screen and (max-width:799px) {
+           
+            #hide{
+                display: none;
+
+            }
+            .hum_btn{
+                display: flex;
+        
+            }
+            .list{
+                background-color: black;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-direction: row;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+ <ul class="list" >
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5e7wR-DpyHPMDiNObw_agxSLqQz8F0Z6PBM56VrTXXg&s" alt="logo" width="100px">
+   <div id="hide">
+    <li><a href="#">home</a></li>
+    <li><a href="#">about</a></li>
+    <li><a href="#">contact</a></li>
+    <li><a href="#">service</a></li>
+   </div>
+    <button onclick="hambur()" class="hum_btn">click me</button>
+ </ul>
+    <ul>
+        <li>home</li>
+        <li>home</li>
+        <li>home</li>
+        <li>home</li>
+        <li>home</li>
+       <div id="list">
+        <li>home</li>   
+        <li>home</li>  
+         <li>home</li>
+         <li>home</li>
+         <li>home</li>
+         <li>home</li>
+         <li>home</li>
+         <li>home</li>
+         <li>home</li>
+         <li>home</li>
+         <li>home</li>
+         <li>home</li>
+         <li>home</li>
+         <li>home</li>
+         <li>home</li>
+         <li>home</li>
+         <li>home</li>
+         <li>home</li>
+         <li>home</li>
+         <li>home</li>
+         <li>home</li>
+         <li>home</li>
+         <li>home</li>
+         <li>home</li>
+         <li>home</li>
+         <li>home</li>
+         <li>home</li>
+         <li>home</li>
+         <li>home</li>
+         <li>home</li>
+         <li>home</li>
+         <li>home</li>
+         <li>home</li>
+         <li>home</li>
+         <li>home</li>
+         <li>home</li>
+         <li>home</li>
+         <li>home</li>
+         <li>home</li>
+         <li>home</li>
+         <li>home</li>
+       </div>
+       <li id="more" onclick="show()">view less</li>
+    </ul>
+    <h2 id="user"></h2>
+    <script>
+        // function hide show display
+function hambur(){
+   let nav=document.getElementById("hide").style;
+   if(nav.display==="flex"){
+    nav.display="none";
+   }
+   else{
+    nav.display="flex";
+    nav.flexDirection="column";
+    nav.scrollBehavior="smooth"
+    // nav.x
+
+   }
+}
+        // view more code 
+
+function show(){
+   var list= document.getElementById("list");
+   var more=document.getElementById("more");
+  if(list.style.display==="block" &&more.innerHTML=="view more" ){
+         list.style.display="none";
+         more.innerHTML="view less"
+        //  document.write("helo")
+  }
+  else{
+    list.style.display="block";
+    more.innerHTML="view more"
+ 
+  }
+ 
+  
+}
+
+        // sum of number
+        // let sum=0;
+        // for(var i=0;i<=65;i++){
+        //     sum=sum+i;
+            
+        // }
+        // document.write(sum)
+        // add odd num in js\
+//  var sum=0; 
+//  let num=70;       
+//        for(var i=0; i<=num;i++){
+//         if(i% 2==0){
+//             document.write(i+"<br>")
+//             sum=sum+i
+//         }
+     
+//        }
+//        document.write(sum)
+// even number 
+//  for(var i=0;i<=9;i++){
+//        if(i % 2 !=0){
+//         document.write(`${i} <br>`);
+     
+//        }
+//  }
+// guess number by user 
+
+// var num =89;
+//  var usernum=prompt("enter you choose right no");
+//  while(num !=usernum){
+//     usernum =prompt("pls guess you right num ")
+//  } 
+//  document.write("congratulation !! you won the game")
+//  document.write(usernum)
+
+// create a user name
+let fullname=prompt("enter your full name without space");
+let username=`@${fullname}${fullname.length}`;
+document.getElementById("user").innerHTML=username;
+    </script>
+</body>
+</html>

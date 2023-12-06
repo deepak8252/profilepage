@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>array filter in odd even number</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-align: center;
+        }
+        button{
+            padding: 12px;
+            text-align: center;
+            font-size: 20px;
+            text-transform: capitalize;
+            background-color: teal;
+            color: white;margin: 10px 12px;
+            cursor: pointer;
+            outline: none;
+            border: none;
+            transition: all .4s;
+            /* From https://css.glass */
+background: rgba(36, 131, 148, 0.83);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(6px);
+-webkit-backdrop-filter: blur(6px);
+border: 1px solid rgba(36, 131, 148, 0.3);
+        }
+        button:hover{
+            /* From https://css.glass */
+background: rgba(111, 29, 94, 0.39);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(7.9px);
+-webkit-backdrop-filter: blur(7.9px);
+border: 1px solid rgba(111, 29, 94, 0.47);
+        }
+        .table{
+            width: 70%;
+            margin: auto;
+            height: 100vh;
+
+        }
+        .active{
+            background: rgba(111, 29, 94, 0.39);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(7.9px);
+-webkit-backdrop-filter: blur(7.9px);
+border: 1px solid rgba(111, 29, 94, 0.47);
+        }
+        .table{
+        /* From https://css.glass */
+background: rgba(37, 10, 10, 0.55);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(8px);
+-webkit-backdrop-filter: blur(8px);
+border: 1px solid rgba(37, 10, 10, 0.54);
+color: white;
+
+
+        }
+        .table table tr{
+        /* From https://css.glass */
+/* From https://css.glass */
+/* From https://css.glass */
+ background: rgba(48, 206, 38, 0.7);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(48, 206, 38, 0.52);
+color: white; 
+
+        }
+        td{
+            padding: 20px;
+        }
+        body{
+            /* From https://css.glass */
+/* From https://css.glass */
+background: rgba(255, 255, 255, 0.2);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(255, 255, 255, 0.3);
+background-image: url("https://images.unsplash.com/photo-1557989048-03456d01a26e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGNsYXNzJTIwcm9vbXxlbnwwfHwwfHx8MA%3D%3D");
+background-size:cover;
+background-position: center;
+background-repeat: no-repeat;
+background-blend-mode: darken;
+
+        }
+    </style>
+</head>
+<body>
+<h2 style="color: white;">we are learn in java script </h2>
+<button onclick="even(1)" class="btn active">all number</button>
+<button onclick="even(2)" class="btn">even number</button>
+<button onclick="even(3)" class="btn">odd number</button>
+<div class="table" >
+    <table border="2" cellpadding="10" cellspacing="0" width="100%">
+        <thead>
+            <tr>
+                <th><h2>sl. no</h2></th>
+                <th id="changen"><h2>All Numbers</h2></th>
+            </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><h2>1</h2></td>
+            <td id="even"></td>
+          </tr>
+        </tbody>
+    </table>
+    
+</div>
+    <script>
+    //even number 
+// let num=[12,34,56,98,45,43,23]
+// num.forEach(function myfun(val){
+//    if(val %2 ===0){
+//     document.write(val +"<br>")
+//    }
+// })
+
+// number of the square 
+// let num=[12,34,45,2,56,12];
+// num.forEach(function myfun(val){
+//     document.write(`<strong> the ${val} of square is ${val*val} <br></strong>`)
+// })
+
+// array filter
+var num=[123,23,456,56,78,89.898,55.78,987.9867,66];
+let btns=document.getElementsByTagName("button");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
+
+ let evenarray=num.filter(function myfilter(val){
+    return val % 2===0
+    
+}
+)
+let odd=num.filter(function odd(val){
+    return val %2 !=0
+})
+document.getElementById("even").innerHTML=`<h2>${num}</h2>`;
+function even(n){
+    // document.getElementById("even").innerHTML=evenarray;
+    if (n===1){
+        document.getElementById("even").innerHTML=`<h2>${num}</h2>`;
+        document.getElementById("changen").innerHTML=`<h2>All Numbers</h2>`;
+        
+//         const list = document.getElementById("myDIV").classList;
+//   list.add("myStyle");
+    }
+    else if(n===2){
+        document.getElementById("even").innerHTML=`<h2>${evenarray}</h2>`;
+        document.getElementById("changen").innerHTML=`<h2>Even Numbers</h2>`;
+       
+    }
+    else{
+        document.getElementById("even").innerHTML=`<h2>${odd}</h2>`;
+        document.getElementById("changen").innerHTML=`<h2>Odd Numbers</h2>`;
+        
+    }
+    
+}
+ 
+
+// document.write(evenarray)
+
+
+    </script>
+</body>
+</html>

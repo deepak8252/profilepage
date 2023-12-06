@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>array</title>
+</head>
+<body>
+    <!-- add to product price here -->
+
+    <input type="text" placeholder="enter your productid" id="productid"><br><br>
+    <input type="text" placeholder="enter youy brand name" id="brandname"><br><br>
+    <input type="text" placeholder="enter your product name " id="product"><br><br>
+    <input type="text" placeholder="enter your product no" id="productno"><br><br>
+    <input type="text" placeholder="enter your product price" id="price"><br><br>
+    <input type="text" placeholder="enter your product discount" id="dis"><br><br>
+    <button onclick="getprice()">get price</button>
+    <h3>item name</h3>
+    <table cellspacing="0" border="2" cellpadding="10">
+        <thead>
+            <tr>
+                <th>product id</th>
+                <th>brand name</th>
+                <th>product name</th>
+                <th>product quantity</th>
+                <th>product price</th>
+                <th>discount</th>
+                <th>total proce</th>
+                <th>discount price</th>
+            </tr>
+        </thead>
+        <tbody id="">
+            <tr>
+                <td class="productlist"></td>
+                <td class="productlist"></td>
+                <td class="productlist"></td>
+                <td class="productlist"></td>
+                <td class="productlist"></td>
+                <td class="productlist"></td>
+                <td class="productlist"></td>
+                <td class="productlist"></td>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+        function getprice(){
+            let pid=document.getElementById("productid").value;
+            let brandname=document.getElementById("brandname").value;
+            let product=document.getElementById("product").value;
+            let productno=document.getElementById("productno").value;
+            let discount=document.getElementById("dis").value;
+            let price=document.getElementById("price").value;
+        //   var items=  document.getElementById("productlist");
+        var item=document.getElementsByClassName("productlist");
+        var total=price*productno;
+        let dis=(total*discount)/100;
+        let discountvalue=total-dis;
+          
+        item[0].innerHTML=`${pid}`
+        item[1].innerHTML=`${brandname}`
+        item[2].innerHTML=`${product}`
+        item[3].innerHTML=`${productno}`
+        item[4].innerHTML=`${price}`
+        item[5].innerHTML=`${discount}`
+        item[6].innerHTML=`${total}`
+        item[7].innerHTML=`${discountvalue}`
+
+        // items.innerHTML=`product id ${pid}<br> brand name is ${brandname} <br> product name is ${product} <br> total no of proct is ${productno}<br> total price is ${total}`
+    
+    
+        
+        }
+        // for a given array with the price of 5 item[300,430,456,345,345]all the item
+        //  have an offer of 10% discount of the them. chnage the array to the store of store the final price
+    //     var items=[300,430,456,435,345];
+    //     let sum=0;
+    //   for(let value of items){
+    //     // document.write(`${value}<br>`);
+    //     let offer=value/10;
+    //     // document.write(`offer price is ${offer} <br>`);
+    //   let  finalprice=value-offer;
+    //     document.write(`final price is ${finalprice}<br>`)
+    //     sum=sum+finalprice
+    //   }
+    //   document.write(`total discount price is ${sum}`);
+     
+
+   
+
+    </script>
+
+</body>
+</html>
